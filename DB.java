@@ -44,7 +44,7 @@ public class DB
 	      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 	      System.exit(0);
 	    }
-	    System.out.println("Table created successfully");
+	    //System.out.println("Table created successfully");
 		
 	}
 	
@@ -76,8 +76,37 @@ public class DB
 	    	System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 	    	System.exit(0);
 	    }
-	    System.out.println("Records created successfully");
+	    //System.out.println("Records created successfully");
 		
 	}
-  
+
+	public void insert_metier(Metier m)
+	{
+		int id=m.get_id();
+		String job=m.get_job();
+		
+		Connection c = null;
+	    Statement stmt = null;
+	    try {
+	    	Class.forName("org.sqlite.JDBC");
+	    	c = DriverManager.getConnection("jdbc:sqlite:repertoire.db");
+	    	c.setAutoCommit(false);
+	    	System.out.println("Opened database successfully");
+
+	    	stmt = c.createStatement();
+	    	String sql = "INSERT INTO METIER (ID,JOB) " +
+	                   "VALUES ("+id+",'"+
+	    			job+"');"; 
+	    	stmt.executeUpdate(sql);
+
+	    	stmt.close();
+	    	c.commit();
+	    	c.close();
+	    } catch ( Exception e ) {
+	    	System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	    	System.exit(0);
+	    }
+	    //System.out.println("Records created successfully");
+		
+	}
 }

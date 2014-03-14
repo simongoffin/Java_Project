@@ -10,6 +10,14 @@ public class Metier {
 		nombre_M++;
 	}
 	
+	public String get_job(){
+		return job;
+	}
+	
+	public int get_id(){
+		return id;
+	}
+	
 	public String toString(){
 		return "Mon metier est "+job;
 	}
