@@ -1,6 +1,6 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
+//import java.sql.Connection;
+//import java.sql.DriverManager;
+//import java.sql.Statement;
 
 
 public class Test {
@@ -28,7 +28,10 @@ public class Test {
 		goffin.affiche();
 		//Creation DB
 		DB data=new DB();
-		data.insert_personne("Simon", "Goffin", 0, "Belgique");
+		data.insert_personne(simon);
+		data.insert_personne(anthony);
+		data.insert_personne(francoise);
+		data.insert_personne(mathieu);
 		
 		
 	}

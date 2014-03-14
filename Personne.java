@@ -10,6 +10,22 @@ public abstract class Personne implements Nationalite {
 		System.out.println("Je viens de "+nation); 
 	}
 	
+	public String get_nom(){
+		return nom;
+	}
+	
+	public String get_prenom(){
+		return prenom;
+	}
+	
+	public int get_id(){
+		return id;
+	}
+	
+	public String get_nation(){
+		return nation;
+	}
+	
 	
 	public String toString(){
 		return "Je m'appelle "+prenom+" "+nom+" "+"et mon id est "+id;

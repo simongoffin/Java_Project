@@ -48,8 +48,12 @@ public class DB
 		
 	}
 	
-	public void insert_personne(String prenom,String nom,int id,String nation)
+	public void insert_personne(Personne p)
 	{
+		int id=p.get_id();
+		String prenom=p.get_prenom();
+		String nom=p.get_nom();
+		String nation=p.get_nation();
 		
 		Connection c = null;
 	    Statement stmt = null;
