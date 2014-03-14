@@ -1,3 +1,7 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
 
 public class Test {
 	public static void main(String args[]){
@@ -22,7 +26,9 @@ public class Test {
 		mathieu.get_nationalite();
 		System.out.println("*****APPARTENANCE*****");
 		goffin.affiche();
-		
+		//Creation DB
+		DB data=new DB();
+		data.insert_personne("Simon", "Goffin", 0, "Belgique");
 		
 		
 	}
