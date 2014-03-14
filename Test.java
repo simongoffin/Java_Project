@@ -34,6 +34,7 @@ public class Test {
 		data.insert_personne(francoise);
 		data.insert_personne(mathieu);
 		data.insert_metier(ingenieur);
+		data.insert_employe(goffin);
 		
 		
 	}

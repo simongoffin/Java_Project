@@ -12,7 +12,7 @@ public class DB
 	    try {
 	      Class.forName("org.sqlite.JDBC");
 	      c = DriverManager.getConnection("jdbc:sqlite:repertoire.db");
-	      System.out.println("Opened database successfully");
+	      //System.out.println("Opened database successfully");
 
 	      stmt = c.createStatement();
 	      
@@ -61,7 +61,7 @@ public class DB
 	    	Class.forName("org.sqlite.JDBC");
 	    	c = DriverManager.getConnection("jdbc:sqlite:repertoire.db");
 	    	c.setAutoCommit(false);
-	    	System.out.println("Opened database successfully");
+	    	//System.out.println("Opened database successfully");
 
 	    	stmt = c.createStatement();
 	    	String sql = "INSERT INTO PERSONNE (ID,PRENOM,NOM,NATION) " +
@@ -91,7 +91,7 @@ public class DB
 	    	Class.forName("org.sqlite.JDBC");
 	    	c = DriverManager.getConnection("jdbc:sqlite:repertoire.db");
 	    	c.setAutoCommit(false);
-	    	System.out.println("Opened database successfully");
+	    	//System.out.println("Opened database successfully");
 
 	    	stmt = c.createStatement();
 	    	String sql = "INSERT INTO METIER (ID,JOB) " +
@@ -109,4 +109,34 @@ public class DB
 	    //System.out.println("Records created successfully");
 		
 	}
+
+	public void insert_employe(Employe em){
+		int id=em.get_id();
+		int idP=em.get_idP();
+		int idM=em.get_idM();
+		
+		Connection c = null;
+	    Statement stmt = null;
+	    try {
+	    	Class.forName("org.sqlite.JDBC");
+	    	c = DriverManager.getConnection("jdbc:sqlite:repertoire.db");
+	    	c.setAutoCommit(false);
+	    	//System.out.println("Opened database successfully");
+
+	    	stmt = c.createStatement();
+	    	String sql = "INSERT INTO EMPLOYE (ID,ID_P,ID_M) " +
+	                   "VALUES ("+id+","+
+	    			idP+","+idM+");"; 
+	    	stmt.executeUpdate(sql);
+
+	    	stmt.close();
+	    	c.commit();
+	    	c.close();
+	    } catch ( Exception e ) {
+	    	System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	    	System.exit(0);
+	    }
+	    //System.out.println("Records created successfully");
+	}
+
 }

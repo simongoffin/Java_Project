@@ -13,6 +13,18 @@ public class Employe {
 		
 	}
 	
+	public int get_id(){
+		return id;
+	}
+	
+	public int get_idP(){
+		return p.get_id();
+	}
+	
+	public int get_idM(){
+		return m.get_id();
+	}
+	
 	public void affiche(){
 		System.out.println("Mon id employe est "+id);
 		System.out.println(p.toString());
