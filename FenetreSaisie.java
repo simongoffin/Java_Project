@@ -39,8 +39,10 @@ public class FenetreSaisie extends JFrame{
 		
 		JPanel l1 = new JPanel();
 		l1.setLayout(new FlowLayout());
-		JButton bouton = new JButton(new GetAction(this, "Insert"));
-		l1.add(bouton);
+		JButton boutonH = new JButton(new GetActionH(this, "insert H"));
+		JButton boutonF = new JButton(new GetActionH(this, "insert F"));
+		l1.add(boutonH);
+		l1.add(boutonF);
 		
 		JPanel l2 = new JPanel();
 		//l2.setLayout(new BoxLayout(l2, BoxLayout.LINE_AXIS));

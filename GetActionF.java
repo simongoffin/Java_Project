@@ -2,10 +2,10 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 
-public class GetAction extends AbstractAction {
+public class GetActionF extends AbstractAction {
 	private FenetreSaisie fenetre;
 	
-	public GetAction(FenetreSaisie fenetre, String texte){
+	public GetActionF(FenetreSaisie fenetre, String texte){
 		super(texte);
 		
 		this.fenetre = fenetre;
@@ -16,6 +16,6 @@ public class GetAction extends AbstractAction {
 		String nom = fenetre.get_nom().getText();
 		String nation = fenetre.get_nation().getText();
 		fenetre.getLabel().setText(prenom+" "+nom+" "+nation);
-		fenetre.data.insert_personne(new Homme(prenom,nom,nation));
+		fenetre.data.insert_personne(new Femme(prenom,nom,nation));
 	} 
 }
