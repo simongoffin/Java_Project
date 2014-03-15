@@ -36,6 +36,9 @@ public class Test {
 		data.insert_metier(ingenieur);
 		data.insert_employe(goffin);
 		
+		FenetreSaisie fenetre = new FenetreSaisie(data);
+		fenetre.setVisible(true);
+		
 		
 	}
 
