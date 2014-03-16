@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.BoxLayout;
 import javax.swing.JTextField;
 
-public class FenetreSaisie extends JFrame{
+public class GUI extends JFrame{
 	public DB data;
 	private JTextField prenom;
 	private JTextField nom;
@@ -17,7 +17,7 @@ public class FenetreSaisie extends JFrame{
 	private JLabel label;
 	Dimension text=new Dimension(100,20);
 	
-	public FenetreSaisie(DB data){
+	public GUI(DB data){
 		super();
 		this.data=data;
 		

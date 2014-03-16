@@ -3,9 +3,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 
 public class GetActionF extends AbstractAction {
-	private FenetreSaisie fenetre;
+	private GUI fenetre;
 	
-	public GetActionF(FenetreSaisie fenetre, String texte){
+	public GetActionF(GUI fenetre, String texte){
 		super(texte);
 		
 		this.fenetre = fenetre;
